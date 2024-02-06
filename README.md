@@ -46,6 +46,7 @@ Results per debug build in Visual Studio: (*10000* items with trivial `string` +
 
 ## Verdicts
 
-* ProtoBuf
-* Custom Binary Implementation
-* Binary formatter: We will never use it ever again, it's shown here just for comparison purpose and comprehensiveness.
+* Custom Binary Implementation: Perfect for all situations for programmers comfortable doing that.
+* ProtoBuf: Decent, portable, fast.
+* Binary formatter: Never use it - it's shown here just for comparison purpose and comprehensiveness. The cost for maintaining a program that depends on it will outweight any benefits because it *encourages **bad design***.
+* JSON: Shown here just for comparison purpose; It's generally good text-based format.
