@@ -1,6 +1,6 @@
 # ProtoBuf Initial Test
 
-Nowadays I find using C# standard libraries and implement my own binary serialization along with L4oz compression is fast and straightforward and gives more control - especially since BinaryFormatter is no longer available which I never liked anyway.
+Nowadays I find using C# standard libraries and implement my own binary serialization along with .L4 compression is fast and straightforward and gives more control - especially since BinaryFormatter is no longer available which I never liked anyway.
 
 In this setup, we compare size, speed and overall cleaniess between binary formatter, custom binary serialization with compression, and protobuf.
 
