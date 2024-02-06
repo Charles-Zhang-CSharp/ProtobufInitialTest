@@ -6,19 +6,19 @@ In this setup, we compare size, speed and overall cleaniess between binary forma
 
 |Criteria|Custom Binary Implementation|JSON/BSON|Binary Formatter|ProtoBuf|
 |-|-|-|-|-|
-|Availability|The only one issue with C# is at the movement we haven't figured out how exactly does it serialize string.|-|-|-|
-|Size|||
-|Speed|||
-|Programming Easiness|Requires a tiny bit design effort - can be daunting to beginners.||
-|Fun|Much more fun because of custom design.||
-|Code Cleaniness and Maintainability|Both Newtonsoft.JSON and .net system library JSON has a bunch of ugly attributes.||Ugly, disguting, confusing, distracting attributes.|Very very ugly and intrusive attributes.|
-|Capability|Can do anything.||
+|Availability|The only one issue with C# is at the movement we haven't figured out how exactly does it serialize string.|Libraries are available for all programming languages, and it's not too hard to implement a reader on one's own.|Completely unusable outside .Net ecosystem; No one knows what's inside.|Packages available for most programming languages; It's said that Protobuf can provide predictable file size and file structure description files?|
+|Size|Very optimal.|Bulky, but human readable.|As bulky as plain-text JSON.|Decent - and it's said that the size for Protobuf is predictable?|
+|Speed|Fastest|Slowest|No faster than anything|Fast, only second to custom implementation|
+|Programming Easiness|Requires a tiny bit design effort - can be daunting to beginners.|No programming needed|No programming needed|No programming needed|
+|Fun|Much more fun because of custom design.|Human readable|-|-|
+|Code Cleaniness and Maintainability|Perfect decoupling - data class is just data class.|Both Newtonsoft.JSON and .net system library JSON has a bunch of ugly attributes.|Ugly, disguting, confusing, distracting attributes.|Very very ugly and intrusive attributes.|
+|Capability|Can do anything.|Some say it has restrictions in terms of type information.|Most capable - this thing can literally dump memory, with pointers and all other structures.|***PENDING INVESTIGATION***|
 |Compatibility|Needs custom implementation but if the file format is well designed it shouldn't be too difficult.|Completely incompatible with non-.Net Framework applications.|Supposedly compatible out of box with Python.|Might require some custom code but generally easily done; Directly usable in JavaScript.|
-|Portability|||Very hard to impossible to convert - reliance on this makes code and data structures extremely messy and bad.|-|
+|Portability|Again, except the string concern, it's highly portable - when without compression.|Highly compatible - plug-in-and-play in JavaScript|Very hard to impossible to convert - reliance on this makes code and data structures extremely messy and bad.|Decently portable and cross-platform.|
 
 ## Results
 
-Results per debug build in Visual Studio:
+Results per debug build in Visual Studio: (*10000* items with trivial `string` + `double` data)
 
 | Operation       | Time taken | File size  |
 |-----------------|------------|------------|
