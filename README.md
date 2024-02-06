@@ -16,6 +16,22 @@ In this setup, we compare size, speed and overall cleaniess between binary forma
 |Compatibility|Needs custom implementation but if the file format is well designed it shouldn't be too difficult.|Completely incompatible with non-.Net Framework applications.|Supposedly compatible out of box with Python.|Might require some custom code but generally easily done; Directly usable in JavaScript.|
 |Portability|Again, except the string concern, it's highly portable - when without compression.|Highly compatible - plug-in-and-play in JavaScript|Very hard to impossible to convert - reliance on this makes code and data structures extremely messy and bad.|Decently portable and cross-platform.|
 
+## Setup
+
+The object to be serialized have this simple structure, without pointer cross-reference (which indicates a good and clean design):
+
+```C#
+class MyObject
+{
+    List<MyItem> Items;
+}
+class MyItem
+{
+    string Name;
+    double Value;
+}
+```
+
 ## Results
 
 Results per debug build in Visual Studio: (*10000* items with trivial `string` + `double` data)
